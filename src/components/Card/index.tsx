@@ -4,7 +4,6 @@ import {
   CardBadge,
   CardBadgeImage,
   CardBadgeList,
-  CardClickRate,
   CardContainer,
   CardContent,
   CardHeader,
