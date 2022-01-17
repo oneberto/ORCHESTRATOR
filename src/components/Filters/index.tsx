@@ -1,6 +1,11 @@
 import React, { useRef, useState } from "react";
 import Select from "../Select";
-import { FilterInput, FiltersLabel } from "./styles";
+import {
+  FilterCol,
+  FilterInput,
+  FiltersLabel,
+  FieltersContainer,
+} from "./styles";
 
 import networkItems from "../../data/networks.json";
 import serviceItems from "../../data/services.json";
@@ -27,8 +32,8 @@ const Filters: React.FC<IProps> = ({
   const serviceRef = useRef<any>();
 
   return (
-    <div className="row" style={{ marginBottom: 30 }}>
-      <div className="col-md-4">
+    <FieltersContainer>
+      <FilterCol>
         <FiltersLabel
           htmlFor="chain"
           onClick={() => networkRef.current?.focus()}
@@ -43,9 +48,9 @@ const Filters: React.FC<IProps> = ({
           placeholder="All"
           ref={networkRef}
         />
-      </div>
+      </FilterCol>
 
-      <div className="col-md-4">
+      <FilterCol>
         <FiltersLabel
           htmlFor="chain"
           onClick={() => serviceRef.current?.focus()}
@@ -60,9 +65,9 @@ const Filters: React.FC<IProps> = ({
           placeholder="All"
           ref={serviceRef}
         />
-      </div>
+      </FilterCol>
 
-      <div className="col-md-4">
+      <FilterCol>
         <FiltersLabel htmlFor="defi_name">Name</FiltersLabel>
 
         <FilterInput
@@ -71,8 +76,8 @@ const Filters: React.FC<IProps> = ({
           onChange={(e) => onChangeTextSearch(e.target.value)}
           value={textSearch}
         />
-      </div>
-    </div>
+      </FilterCol>
+    </FieltersContainer>
   );
 };
 

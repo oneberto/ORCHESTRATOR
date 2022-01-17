@@ -54,9 +54,8 @@ const Card: React.FC<IProps> = ({ name, networks, services, image }) => {
             </CardBadge>
           ))}
         </CardBadgeList>
-
-        <Button>VISIT</Button>
       </CardContent>
+      <Button>VISIT</Button>
     </CardContainer>
   );
 };

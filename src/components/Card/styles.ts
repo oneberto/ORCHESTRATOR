@@ -1,10 +1,18 @@
 import styled from "styled-components";
+import { MediaQueries } from "../../utils/mediaQueries";
 
 export const CardContainer = styled.div`
   background: #141a1a;
   flex: 1;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   border: 2px solid #1f2626;
+  display: flex;
+  flex-direction: column;
+
+  ${MediaQueries.BIGGER_THAN_TABLET} {
+    margin-bottom: 30px;
+    height: calc(100% - 30px);
+  }
 `;
 
 export const CardHeader = styled.div`
@@ -18,6 +26,7 @@ export const CardContent = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px;
+  flex: 1;
 `;
 
 export const CardLogo = styled.div<{ url?: string }>`

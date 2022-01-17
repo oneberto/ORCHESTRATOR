@@ -4,10 +4,15 @@ import { MediaQueries } from "../../utils/mediaQueries";
 export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 80px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 60px;
   justify-content: center;
   flex-direction: column;
+
+  ${MediaQueries.BIGGER_THAN_TABLET} {
+    margin-top: 80px;
+    margin-bottom: 100px;
+  }
 `;
 
 const logoAnimation = keyframes`0% {color: #6dffbf;} 50% {color: green; } 100% {color: #6dffbf;}`;
@@ -28,6 +33,15 @@ export const HeaderLogo = styled.h1`
 `;
 
 export const HeaderMessage = styled.h2`
-  font-size: 0.9rem;
+  font-size: 0.55rem;
   color: #f1f1f1;
+  text-align: center;
+
+  ${MediaQueries.BIGGER_THAN_TABLET} {
+    font-size: 0.7rem;
+  }
+
+  ${MediaQueries.BIGGER_THAN_MEDIUM} {
+    font-size: 0.85rem;
+  }
 `;
