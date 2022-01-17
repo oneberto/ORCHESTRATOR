@@ -1,0 +1,143 @@
+[
+    {
+        "id": 6,
+        "name": "Reaper.Farm",
+        "url": "https://www.reaper.farm/",
+        "image": "https://www.reaper.farm/favicon.ico",
+        "networks": [
+            "fantom"
+        ],
+        "services": [
+            "pool",
+            "farm"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Tomb",
+        "url": "https://tomb.finance/",
+        "image": "https://tomb.finance/favicon.ico",
+        "networks": [
+            "fantom"
+        ],
+        "services": [
+            "pool",
+            "farm",
+            "stake"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "AutoShark",
+        "url": "",
+        "image": "https://autoshark.finance/favicon.ico",
+        "networks": [
+            "binance"
+        ],
+        "services": [
+            "swap",
+            "pool",
+            "farm",
+            "stake",
+            "nft"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Atlantis",
+        "url": "https://atlantis.autoshark.finance/",
+        "image": "https://atlantis.autoshark.finance/favicon.ico",
+        "networks": [
+            "binance"
+        ],
+        "services": [
+            "stake",
+            "pool"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Tarot",
+        "url": "https://www.tarot.to/",
+        "image": "https://www.tarot.to/favicon.png",
+        "networks": [
+            "fantom"
+        ],
+        "services": [
+            "pool",
+            "farm",
+            "stake",
+            "lend"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "SpookySwap",
+        "url": "https://spookyswap.finance/",
+        "image": "https://spookyswap.finance/favicon.ico",
+        "networks": [
+            "fantom"
+        ],
+        "services": [
+            "pool",
+            "farm",
+            "stake",
+            "liquidity",
+            "swap",
+            "bridge"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "SpiritSwap",
+        "url": "https://app.spiritswap.finance/",
+        "image": "https://app.spiritswap.finance/favicon-32x32.png",
+        "networks": [
+            "fantom"
+        ],
+        "services": [
+            "pool",
+            "farm",
+            "stake",
+            "bridge",
+            "liquidity"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "OpenOcean",
+        "url": "https://openocean.finance/",
+        "image": "https://openocean.finance/favicon-32x32.png",
+        "networks": [
+            "fantom",
+            "binance",
+            "polygon",
+            "ethereum",
+            "avalanche"
+        ],
+        "services": [
+            "pool",
+            "farm",
+            "stake",
+            "bridge",
+            "swap"
+        ]
+    },
+    {
+        "id": 69,
+        "name": "PancakeSwap",
+        "url": "https://pancakeswap.finance/",
+        "image": "https://pancakeswap.finance/favicon.ico",
+        "networks": [
+            "binance"
+        ],
+        "services": [
+            "swap",
+            "pool",
+            "farm",
+            "stake",
+            "nft",
+            "liquidity"
+        ]
+    }
+]

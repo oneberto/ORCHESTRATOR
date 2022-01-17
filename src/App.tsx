@@ -1,26 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useMemo, useState } from "react";
+import Card from "./components/Card";
+import Filters from "./components/Filters";
+import Header from "./components/Header";
+import { AppContainer } from "./styles";
 
-function App() {
+// Data
+import defiItems from "./data/defis.json";
+import { IOption } from "./interfaces/IOption";
+
+const App = () => {
+  const [networks, setNetworks] = useState<IOption[]>([]);
+  const [services, setServices] = useState<IOption[]>([]);
+  const [textSearch, setTextSearch] = useState("");
+
+  const defis = useMemo(() => {
+    if (!networks?.length && !services?.length && !textSearch?.length) {
+      return defiItems;
+    }
+
+    return defiItems.filter((defi) => {
+      const hasMatchedNetworks =
+        !!networks?.length &&
+        networks.some(({ value }) => defi.networks.includes(value));
+      const hasMatchedServices =
+        !!services?.length &&
+        services.some(({ value }) => defi.services.includes(value));
+
+      const hasMatchedName =
+        !!textSearch &&
+        defi.name.toLowerCase().includes(textSearch.toLowerCase());
+
+      return hasMatchedNetworks || hasMatchedServices || hasMatchedName;
+    });
+  }, [services, networks, textSearch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <Header />
+
+      <div className="container">
+        <Filters
+          networks={networks}
+          onChangeNetworks={setNetworks}
+          services={services}
+          onChangeServices={setServices}
+          textSearch={textSearch}
+          onChangeTextSearch={setTextSearch}
+        />
+        <div className="row">
+          {defis.map(({ id, ...rest }, index) => (
+            <div className="col-md-4" key={id}>
+              <Card {...rest} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </AppContainer>
   );
-}
+};
 
 export default App;

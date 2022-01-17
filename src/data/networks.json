@@ -1,0 +1,24 @@
+[
+    {
+        "value": "ethereum",
+        "label": "Ethereum"
+    },
+    {
+        "value": "binance",
+        "label": "Binance",
+        "image": "https://bin.bnbstatic.com/static/images/common/favicon.ico"
+    },
+    {
+        "value": "polygon",
+        "label": "Polygon"
+    },
+    {
+        "value": "fantom",
+        "label": "Fantom",
+        "image": "https://s2.coinmarketcap.com/static/img/coins/64x64/3513.png"
+    },
+    {
+        "value": "avalanche",
+        "label": "Avalanche"
+    }
+]
