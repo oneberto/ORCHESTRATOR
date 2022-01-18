@@ -10,6 +10,7 @@ const Button = styled.button.attrs({ type: "button" })`
   cursor: pointer;
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: 1px;
+  text-decoration: none;
 
   :hover {
     background-color: rgba(109, 255, 191, 0.7);

@@ -22,9 +22,16 @@ interface IProps {
   networks: string[];
   services: string[];
   image?: string;
+  onClick(): void;
 }
 
-const Card: React.FC<IProps> = ({ name, networks, services, image }) => {
+const Card: React.FC<IProps> = ({
+  name,
+  networks,
+  services,
+  image,
+  onClick,
+}) => {
   return (
     <CardContainer>
       <CardHeader>
@@ -54,7 +61,7 @@ const Card: React.FC<IProps> = ({ name, networks, services, image }) => {
           ))}
         </CardBadgeList>
       </CardContent>
-      <Button>VISIT</Button>
+      <Button onClick={onClick}>VISIT</Button>
     </CardContainer>
   );
 };

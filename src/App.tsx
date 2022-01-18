@@ -7,11 +7,13 @@ import { AppContainer } from "./styles";
 // Data
 import defiItems from "./data/defis.json";
 import { IOption } from "./interfaces/IOption";
+import Modal from "./components/Modal";
 
 const App = () => {
   const [networks, setNetworks] = useState<IOption[]>([]);
   const [services, setServices] = useState<IOption[]>([]);
   const [textSearch, setTextSearch] = useState("");
+  const [defiURL, setDefiURL] = useState("");
 
   const defis = useMemo(() => {
     if (!networks?.length && !services?.length && !textSearch?.length) {
@@ -35,27 +37,30 @@ const App = () => {
   }, [services, networks, textSearch]);
 
   return (
-    <AppContainer>
-      <Header />
+    <>
+      <Modal defiURL={defiURL} onClickClose={() => setDefiURL("")} />
+      <AppContainer>
+        <Header />
 
-      <div className="container">
-        <Filters
-          networks={networks}
-          onChangeNetworks={setNetworks}
-          services={services}
-          onChangeServices={setServices}
-          textSearch={textSearch}
-          onChangeTextSearch={setTextSearch}
-        />
-        <div className="row">
-          {defis.map(({ id, ...rest }, index) => (
-            <div className="col-md-4" key={id}>
-              <Card {...rest} />
-            </div>
-          ))}
+        <div className="container">
+          <Filters
+            networks={networks}
+            onChangeNetworks={setNetworks}
+            services={services}
+            onChangeServices={setServices}
+            textSearch={textSearch}
+            onChangeTextSearch={setTextSearch}
+          />
+          <div className="row">
+            {defis.map(({ id, ...rest }, index) => (
+              <div className="col-md-4" key={id}>
+                <Card {...rest} onClick={() => setDefiURL(rest.url)} />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </AppContainer>
+      </AppContainer>
+    </>
   );
 };
 

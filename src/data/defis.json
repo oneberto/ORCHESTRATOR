@@ -29,7 +29,7 @@
     {
         "id": 2,
         "name": "AutoShark",
-        "url": "",
+        "url": "https://autoshark.finance/",
         "image": "https://autoshark.finance/favicon.ico",
         "networks": [
             "binance"
